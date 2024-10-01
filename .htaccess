@@ -1,0 +1,4 @@
+# Allow POST methods
+<Limit POST>
+   Require all granted
+</Limit>
