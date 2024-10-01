@@ -55,28 +55,8 @@
           <div class="producto__informacion">
             <p class="producto__nombre">VueJS</p>
             <p class="producto__precio">$25.000</p>
-            <button
-              class="agregar-carrito"
-              data-id="1"
-              data-nombre="VueJS"
-              data-precio="25000"
-              data-talla="M"
-              data-color="rojo"
-            >
-              <i class="fa fa-shopping-cart"></i> Añadir al carrito
-            </button>
           </div>
         </div>
-
-        <!-- Comentario corregido -->
-        <!--
-        <div class="carrito">
-          <h2>Carrito de Compras</h2>
-          <div id="lista-carrito"></div>
-          <p>Total: <span id="total">$0.00</span></p>
-          <button id="vaciar-carrito">Vaciar Carrito</button>
-        </div>
-        -->
 
         <div class="producto">
           <a href="producto.html">
@@ -233,6 +213,7 @@
       <div class="grafico grafico--camisas"></div>
       <div class="grafico grafico--node"></div>
     </main>
+    <!-- Modal de Iniciar Sesión -->
     <div id="modal-login" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -250,7 +231,11 @@
             id="login-password"
             required
           />
-          <button type="submit">Iniciar Sesión</button>
+          <button type="submit" id="btn-login">Iniciar Sesión</button>
+          <button type="button" id="btn-cancelar-login" class="btn-cancelar">
+            Salir
+          </button>
+          <!-- Botón de salir -->
         </form>
         <p>
           ¿No tienes cuenta? <a href="#" id="btn-register">Regístrate aquí</a>
@@ -258,6 +243,7 @@
       </div>
     </div>
 
+    <!-- Modal de Registro -->
     <div id="modal-register" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -275,7 +261,12 @@
             id="register-password"
             required
           />
-          <button type="submit">Registrarse</button>
+          <button type="submit" id="btn-register">Registrarse</button>
+          <button type="button" id="btn-cancelar-register" class="btn-cancelar">
+            Salir
+          </button>
+
+          <!-- Botón de salir -->
         </form>
       </div>
     </div>

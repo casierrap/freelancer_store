@@ -1,14 +1,17 @@
 <?php
-$servername = "localhost"; // Servidor de base de datos
-$username = "root"; // usuario de MySQL
-$password = ""; //  contraseña de MySQL
-$dbname = "tienda_db"; // Nombre de la base de datos
+$host = 'localhost'; // Dirección del servidor de base de datos
+$dbname = 'tienda_db'; // Nombre de tu base de datos
+$username = 'roof'; // Usuario de la base de datos
+$password = ' '; // Contraseña de la base de datos
 
-// Crear conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+try {
+    // Crear una conexión PDO a la base de datos
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    // Establecer el modo de error de PDO a excepción
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Error de conexión: " . $e->getMessage());
 }
 ?>
+
+

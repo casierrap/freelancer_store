@@ -77,6 +77,9 @@ h3 {
     align-items: center;
     background-color: var(--primarioOscuro); /* Fondo blanco */
     padding: 10px 20px;
+
+    height: 50px; /* Ajusta la altura según tus necesidades */
+    width: auto;
 }
 .header__logo-link {
     display: flex;
@@ -85,7 +88,9 @@ h3 {
   }
   
   .header__logo {
-    height: 40px; /* Altura del logo */
+    height: 40px;/* Altura del logo */
+   /* height: 50px; /* Ajusta la altura según tus necesidades */
+  width: auto;
   }
   
   .header__search {
@@ -286,6 +291,9 @@ h3 {
     border-radius: 10px;
     width: 400px;
     max-width: 80%;
+    box-shadow: none; /* Asegúrate de que no haya sombra */
+    border: none; /* Elimina cualquier borde que pueda causar el sombreado */
+}
 }
 
 .close {
@@ -369,6 +377,7 @@ h3 {
     font-family: Arial, Helvetica, sans-serif;
     padding: 1rem;
     appearance: none;
+    background-color: var(--negro);
 }
 
 .formulario__submit {
@@ -385,6 +394,17 @@ h3 {
     cursor: pointer;
     background-color: var(--primarioOscuro);
 }
+/* Estilo para el campo de selección de talla */
+select.formulario__campo {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  
+  select.formulario__campo option {
+    background-color: var(--negro);
+    color: var(--blanco);
+  }
+  
 
 .fade-in {
    opacity: 0;
@@ -452,3 +472,17 @@ h3 {
     background-color: #e05f41; /* Color ligeramente más oscuro al pasar el ratón */
   }
   
+  input, button {
+    outline: none;
+    box-shadow: none !important; /* Elimina cualquier sombra */
+}
+
+input:focus, button:focus {
+    outline: none;
+    box-shadow: none !important; /* También para el estado de enfoque */
+}
+
+.modal-content {
+    box-shadow: none; /* Asegura que el modal no tenga sombra */
+    
+}

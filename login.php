@@ -1,35 +1,28 @@
-<?php
-session_start();
-require 'db.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<?php
+include 'dp.php'; // Conexión a la base de datos
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    // Consultar para verificarel usuario existe
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
+    // Verificar el usuario
+    $stmt = $conn->prepare("SELECT * FROM users WHERE email = ? AND password = ?");
+    $stmt->bind_param("ss", $email, $password);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        
-        // Verificar la contraseña
-        if (password_verify($password, $user['password'])) {
-            // Inicio de sesión 
-            $_SESSION['user_id'] = $user['id'];
-            echo json_encode(['success' => true, 'message' => 'Inicio de sesión exitoso']);
-        } else {
-            // Contraseña incorrecta
-            echo json_encode(['success' => false, 'message' => 'Contraseña incorrecta']);
-        }
+        echo json_encode(['success' => true, 'message' => 'Inicio de sesión exitoso']);
     } else {
-        // Usuario no encontrado
-        echo json_encode(['success' => false, 'message' => 'El usuario no existe']);
+        echo json_encode(['success' => false, 'message' => 'Credenciales incorrectas']);
     }
+
     $stmt->close();
     $conn->close();
+} else {
+    // Si el método no es POST, devuelve el código 405
+    http_response_code(405);
+    echo json_encode(['success' => false, 'message' => 'Método no permitido']);
 }
 ?>

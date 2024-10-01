@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,18 +10,18 @@
       href="https://fonts.googleapis.com/css2?family=Moderustic:wght@300..800&family=Staatliches&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="JS/script.js"></script>
-    <title>Document</title>
+    <title>Tienda Front End</title>
   </head>
   <body>
-    <!--Ejemplo BEM-->
+    <!-- Header -->
     <header class="header">
       <a href="index.html"></a>
       <img class="header__logo" src="img/logo.png" alt="Logotipo" />
     </header>
 
+    <!-- Navegación -->
     <nav class="navegacion">
       <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"
         >Tienda</a
@@ -29,6 +29,7 @@
       <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
     </nav>
 
+    <!-- Contenido principal -->
     <main class="contenedor">
       <h1>React JS</h1>
 
@@ -49,6 +50,11 @@
               <option>Mediana</option>
               <option>Grande</option>
             </select>
+            <select class="formulario__campo">
+              <option disabled selected>--Seleccionar Género--</option>
+              <option value="hombre">Hombre</option>
+              <option value="mujer">Mujer</option>
+            </select>
             <input
               class="formulario__campo"
               type="number"
@@ -64,15 +70,41 @@
         </div>
       </div>
     </main>
-    <div class="carrito">
-      <h2>Carrito de Compras</h2>
-      <div id="lista-carrito"></div>
-      <p>Total: <span id="total">$0.00</span></p>
-      <button id="vaciar-carrito">Vaciar Carrito</button>
-    </div>
 
+    <!-- Footer -->
     <footer class="footer">
       <p class="footer__texto">Front End Store © Todos los derechos 2024</p>
+      <style>
+        /* Ajustes para la página producto.html */
+        html,
+        body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+
+        main.contenedor {
+          flex: 1; /* Esto expande el contenido principal para llenar el espacio disponible */
+        }
+
+        .footer {
+          margin-top: auto; /* Empuja el footer hacia el fondo si el contenido es corto */
+        }
+
+        /* Centrar y ajustar la imagen en producto.html */
+        .header__logo {
+          display: flex;
+          height: 40px; /* Altura del logo */
+          width: auto;
+          margin: 0 auto;
+        }
+      </style>
     </footer>
   </body>
 </html>
