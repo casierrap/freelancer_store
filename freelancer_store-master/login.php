@@ -1,11 +1,12 @@
 <?php
 header('Content-Type: application/json'); // Asegura que la respuesta es JSON
 include 'dp.php'; // Conexión a la base de datos
+include '../session.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validar y sanitizar las entradas
     if (isset($_POST['email']) && isset($_POST['password'])) {
-        $email = trim($_POST['email']);
+        $email = filter_var(trim($_POST['email']), FILTER_VALIDATE_EMAIL);
         $password = trim($_POST['password']);
 
         try {
@@ -19,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 // Verificar la contraseña
                 // Asumiendo que las contraseñas están hasheadas usando password_hash()
                 if ($password === $user['password']) {
-                    // Aquí puedes iniciar sesión, por ejemplo, establecer sesiones
-                    // session_start();
-                    // $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['user_id'] = $user['id'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['username'] = $user['username']; // Asegúrate de tener un campo 'username' en tu tabla 'users'
                     
                     echo json_encode(['success' => true, 'message' => 'Inicio de sesión exitoso']);
                 } else {

@@ -1,3 +1,7 @@
+<?php
+include '../session.php'; // Iniciar la sesión
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,8 +24,9 @@
   </head>
   <body>
     <!--Ejemplo BEM-->
+    <!--Ejemplo BEM-->
     <header class="header">
-      <a href="index.html" class="header__logo-link">
+      <a href="index.php" class="header__logo-link">
         <img class="header__logo" src="img/logo.png" alt="Logotipo" />
       </a>
       <input
@@ -30,10 +35,17 @@
         placeholder="Buscar producto"
       />
       <nav class="header__nav">
-        <a href="#" class="header__link" id="btn-login">Mi cuenta</a>
-        <a href="#" class="header__link" id="btn-login-icon"
-          ><i class="fa fa-user"></i
-        ></a>
+        <?php if (isset($_SESSION['username'])): ?>
+          <a href="#" class="header__link">Hola, <?php echo htmlspecialchars($_SESSION['username']); ?></a>
+          <a href="logout.php" class="header__link" id="btn-logout-icon">
+            <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
+          </a>
+        <?php else: ?>
+          <a href="#" class="header__link" id="btn-login">Mi cuenta</a>
+          <a href="#" class="header__link" id="btn-login-icon">
+            <i class="fa fa-user"></i>
+          </a>
+        <?php endif; ?>
         <a href="#" class="header__link"><i class="fa fa-shopping-cart"></i></a>
       </nav>
     </header>

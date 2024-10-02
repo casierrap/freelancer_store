@@ -20,7 +20,7 @@ document.getElementById('btn-cancelar-login').addEventListener('click', function
 // Función para cerrar el modal de registro y redirigir al inicio
 document.getElementById('btn-cancelar-register').addEventListener('click', function() {
   document.getElementById('modal-register').style.display = 'none';
-  window.location.href = 'index.html';  // Redirigir al inicio
+  window.location.href = 'index.php';  // Redirigir al inicio
 });
 
 // Opcional: también cerrar el modal al hacer clic en el botón de la 'x'
@@ -46,7 +46,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
       const response = JSON.parse(this.responseText);
       alert(response.message);
       if (response.success) {
-        window.location.href = 'index.html'; // Redirigir si es exitoso
+        window.location.href = 'index.php'; // Redirigir si es exitoso
       }
     }
   };
