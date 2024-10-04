@@ -52,3 +52,18 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
   };
   xhr.send(`email=${email}&password=${password}`);
 });
+// Obtener los modales
+var modalLogin = document.getElementById('modal-login');
+var modalRegister = document.getElementById('modal-register');
+
+// Obtener el botón de registro
+var btnRegisterLink = document.getElementById('btn-register');
+
+// Abrir modal de registro y cerrar el de iniciar sesión
+document.getElementById('btn-register').addEventListener('click', function() {
+  modalLogin.style.display = 'none'; // Cerrar modal de login
+  modalRegister.style.display = 'flex'; // Abrir modal de registro
+});
+
+
+

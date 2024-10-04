@@ -273,6 +273,26 @@ h3 {
     }
 }
 */
+
+.login-form {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-email, #login-password {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
 .modal {
     display: none;
     position: fixed;
@@ -291,9 +311,159 @@ h3 {
     border-radius: 10px;
     width: 400px;
     max-width: 80%;
-    box-shadow: none; /* Asegúrate de que no haya sombra */
-    border: none; /* Elimina cualquier borde que pueda causar el sombreado */
+    max-height: 80vh; /* Limitar la altura del modal al 80% de la ventana */
+    overflow-y: auto; /* Habilitar el scroll vertical */
+    box-shadow: none;
+    border: none;
 }
+
+#btn-login, #btn-cancelar-login {
+
+    background-color: #6A0DAD;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%; /* Ambos botones tendrán el mismo ancho */
+    max-width: 150px; /* Máximo ancho para evitar que sea demasiado grande */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btn-login:hover, #btn-cancelar-login:hover {
+
+    background-color: #4B0082;/* Un morado más oscuro al hacer hover */
+    transform: scale(1.05); /* Pequeño efecto de agrandamiento */
+}
+#register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   max-height: 100%; /* Asegurar que el formulario no exceda la altura del modal */ 
+}
+
+#register-fullname, #register-username, #register-phone, 
+#register-email, #register-password, #confirm-password {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#btn-register, #btn-cancelar-register {
+    background-color: #6A0DAD; /* Color morado */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%; /* Ambos botones tendrán el mismo ancho */
+    max-width: 150px; /* Máximo ancho para evitar que sea demasiado grande */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btn-register:hover, #btn-cancelar-register:hover {
+    background-color: #4B0082; /* Un morado más oscuro al hacer hover */
+    transform: scale(1.05); /* Pequeño efecto de agrandamiento */
+}
+#register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#register-fullname, #register-username, #register-phone, 
+#register-email, #register-password, #confirm-password, 
+#register-address, #register-city, #register-department {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos específicos para el select de departamento */
+#register-department {
+    appearance: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#btn-register, #btn-cancelar-register {
+    background-color: #6A0DAD; /* Color morado */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%; /* Ambos botones tendrán el mismo ancho */
+    max-width: 150px; /* Máximo ancho para evitar que sea demasiado grande */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btn-register:hover, #btn-cancelar-register:hover {
+    background-color: #4B0082; /* Un morado más oscuro al hacer hover */
+    transform: scale(1.05); /* Pequeño efecto de agrandamiento */
+}#register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#register-fullname, #register-username, #register-phone, 
+#register-email, #register-password, #confirm-password, 
+#register-address, #register-city, #register-department {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilos específicos para el select de departamento */
+#register-department {
+    appearance: none;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#btn-register, #btn-cancelar-register {
+    background-color: #6A0DAD; /* Color morado */
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 100%; /* Ambos botones tendrán el mismo ancho */
+    max-width: 150px; /* Máximo ancho para evitar que sea demasiado grande */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+#btn-register:hover, #btn-cancelar-register:hover {
+    background-color: #4B0082; /* Un morado más oscuro al hacer hover */
+    transform: scale(1.05); /* Pequeño efecto de agrandamiento */
 }
 
 .close {

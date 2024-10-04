@@ -41,7 +41,7 @@ include '../session.php'; // Iniciar la sesión
             <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
           </a>
         <?php else: ?>
-          <a href="#" class="header__link" id="btn-login">Mi cuenta</a>
+          <a href="#" class="header__link" id="btn-account">Mi cuenta</a>
           <a href="#" class="header__link" id="btn-login-icon">
             <i class="fa fa-user"></i>
           </a>
@@ -51,7 +51,7 @@ include '../session.php'; // Iniciar la sesión
     </header>
 
     <nav class="navegacion">
-      <a class="navegacion__enlace navegacion__enlace--activo" href="index.html"
+      <a class="navegacion__enlace navegacion__enlace--activo" href="index.php"
         >Tienda</a
       >
       <a class="navegacion__enlace" href="nosotros.html">Nosotros</a>
@@ -230,7 +230,7 @@ include '../session.php'; // Iniciar la sesión
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Iniciar Sesión</h2>
-        <form id="login-form">
+        <form id="login-form" class= "login-form">
           <input
             type="email"
             placeholder="Correo electrónico"
@@ -257,31 +257,56 @@ include '../session.php'; // Iniciar la sesión
 
     <!-- Modal de Registro -->
     <div id="modal-register" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Registro</h2>
-        <form id="register-form">
-          <input
-            type="email"
-            placeholder="Correo electrónico"
-            id="register-email"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Contraseña"
-            id="register-password"
-            required
-          />
-          <button type="submit" id="btn-register">Registrarse</button>
-          <button type="button" id="btn-cancelar-register" class="btn-cancelar">
-            Salir
-          </button>
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Registro</h2>
+    <form id="register-form">
+      <input type="text" placeholder="Nombre Completo" id="register-fullname" required />
+      <input type="text" placeholder="Nombre de Usuario" id="register-username" required />
+      <input type="tel" placeholder="Número de Teléfono" id="register-phone" required />
+      <input type="email" placeholder="Correo Electrónico" id="register-email" required />
+      <input type="password" placeholder="Contraseña" id="register-password" required />
+      <input type="password" placeholder="Confirmar Contraseña" id="confirm-password" required />
 
-          <!-- Botón de salir -->
-        </form>
-      </div>
-    </div>
+    <input type="text" placeholder="Dirección" id="register-address" required />
+      <input type="text" placeholder="Ciudad" id="register-city" required />
+      
+      <!-- Select para departamentos -->
+      <select id="register-department" required>
+        <option value="">Seleccione su departamento</option>
+        <option value="Amazonas">Amazonas</option>
+        <option value="Antioquia">Antioquia</option>
+        <option value="Atlántico">Atlántico</option>
+        <option value="Bogotá D.C.">Bogotá D.C.</option>
+        <option value="Bolívar">Bolívar</option>
+        <option value="Boyacá">Boyacá</option>
+        <option value="Caldas">Caldas</option>
+        <option value="Cauca">Cauca</option>
+        <option value="Cesar">Cesar</option>
+        <option value="Córdoba">Córdoba</option>
+        <option value="Cundinamarca">Cundinamarca</option>
+        <option value="Huila">Huila</option>
+        <option value="La Guajira">La Guajira</option>
+        <option value="Magdalena">Magdalena</option>
+        <option value="Meta">Meta</option>
+        <option value="Nariño">Nariño</option>
+        <option value="Norte de Santander">Norte de Santander</option>
+        <option value="Quindío">Quindío</option>
+        <option value="Risaralda">Risaralda</option>
+        <option value="Santander">Santander</option>
+        <option value="Sucre">Sucre</option>
+        <option value="Tolima">Tolima</option>
+        <option value="Valle del Cauca">Valle del Cauca</option>
+      </select>
+
+      <button type="submit" id="btn-register">Registrarse</button>
+      <button type="button" id="btn-cancelar-register" class="btn-cancelar">Salir</button>
+    </form>
+  </div>
+</div>
+  </div>
+</div>
+
 
     <footer class="footer">
       <p class="footer__texto">Front End Store © Todos los derechos 2024</p>
