@@ -294,7 +294,7 @@ h3 {
     box-shadow: none; /* Asegúrate de que no haya sombra */
     border: none; /* Elimina cualquier borde que pueda causar el sombreado */
 }
-}
+
 
 .close {
     position: absolute;

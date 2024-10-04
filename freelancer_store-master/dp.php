@@ -2,7 +2,7 @@
 $host = 'localhost'; // Dirección del servidor de base de datos
 $dbname = 'test'; // Nombre de tu base de datos
 $username = 'root'; // Usuario de la base de datos
-$password = ''; // Contraseña de la base de datos
+$password = '12345678'; // Contraseña de la base de datos
 
 try {
     // Crear una conexión PDO a la base de datos
