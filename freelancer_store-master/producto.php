@@ -1,3 +1,7 @@
+<?php
+include '../session.php'; // Iniciar la sesión
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -43,14 +47,16 @@
             culpa. Ducimus, dolore magnam.
           </p>
 
-          <form class="formulario">
-            <select class="formulario__campo">
+          <form action="../carrito.php" method="POST" class="formulario">
+            <input type="hidden" name="producto_id" value="3"> <!-- Cambiar este valor por el ID real del producto -->
+
+            <select name="talla" class="formulario__campo">
               <option disabled selected>--Seleccionar Talla--</option>
-              <option>Pequeña</option>
-              <option>Mediana</option>
-              <option>Grande</option>
+              <option value="Pequeña">Pequeña</option>
+              <option value="Mediana">Mediana</option>
+              <option value="Grande">Grande</option>
             </select>
-            <select class="formulario__campo">
+            <select name="genero" class="formulario__campo">
               <option disabled selected>--Seleccionar Género--</option>
               <option value="hombre">Hombre</option>
               <option value="mujer">Mujer</option>
@@ -58,24 +64,44 @@
             <input
               class="formulario__campo"
               type="number"
+              name="cantidad"
               placeholder="Cantidad"
               min="1"
+              value="1"
             />
             <input
               class="formulario__submit"
               type="submit"
               value="Agregar al Carrito"
+              name="agregar"
             />
           </form>
         </div>
       </div>
     </main>
 
+    <div id="carrito-lateral" class="carrito-lateral">
+      <div class="carrito-header">
+        <h2>Tu Carrito</h2>
+        <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
+      </div>
+      <div class="carrito-contenedor" id="carrito-contenido">
+        <!--Aquí se llenará con los productos del carrito-->
+      </div>
+      <div class="carrito-footer">
+        <button class="comprar-btn">Proceder al Pago</button>
+      </div>
+    </div>
+
+
+    <!-- Fondo oscurecido al abrir el carrito -->
+    <div id="overlay" class="overlay"></div>
+
     <!-- Footer -->
     <footer class="footer">
       <p class="footer__texto">Front End Store © Todos los derechos 2024</p>
       <style>
-        /* Ajustes para la página producto.html */
+        /* Ajustes para la página producto.php */
         html,
         body {
           height: 100%;

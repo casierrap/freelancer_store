@@ -1,5 +1,6 @@
 <?php
 include '../session.php'; // Iniciar la sesión
+
 ?>
 
 <!DOCTYPE html>
@@ -35,18 +36,21 @@ include '../session.php'; // Iniciar la sesión
         placeholder="Buscar producto"
       />
       <nav class="header__nav">
-        <?php if (isset($_SESSION['username'])): ?>
-          <a href="#" class="header__link">Hola, <?php echo htmlspecialchars($_SESSION['username']); ?></a>
-          <a href="logout.php" class="header__link" id="btn-logout-icon">
-            <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
-          </a>
-        <?php else: ?>
-          <a href="#" class="header__link" id="btn-login">Mi cuenta</a>
-          <a href="#" class="header__link" id="btn-login-icon">
-            <i class="fa fa-user"></i>
-          </a>
-        <?php endif; ?>
-        <a href="#" class="header__link"><i class="fa fa-shopping-cart"></i></a>
+      <?php if (isset($_SESSION['username'])): ?>
+    <a href="#" class="header__link">Hola, <?php echo htmlspecialchars($_SESSION['username']); ?></a>
+    <a href="logout.php" class="header__link" id="btn-logout-icon">
+        <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
+    </a>
+<?php else: ?>
+    <a href="#" class="header__link" id="btn-login1">Mi cuenta</a>
+    <a href="#" class="header__link" id="btn-login-icon">
+        <i class="fa fa-user"></i>
+    </a>
+<?php endif; ?>
+<a href="#" class="carrito-icono"><i class="fa fa-shopping-cart"></i>
+    <span id="contador-carrito" class="contador-carrito">0</span>
+</a>
+
       </nav>
     </header>
 
@@ -61,7 +65,7 @@ include '../session.php'; // Iniciar la sesión
       <h1>Nuestros Productos</h1>
       <div class="grid">
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/1.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -71,7 +75,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/2.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -81,7 +85,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/3.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -91,7 +95,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/4.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -101,7 +105,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/5.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -111,7 +115,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/6.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -121,7 +125,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/7.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -131,7 +135,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/8.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -141,7 +145,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img class="producto__imagen" src="img/9.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
@@ -151,7 +155,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img
               class="producto__imagen"
               src="img/10.jpg"
@@ -165,7 +169,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img
               class="producto__imagen"
               src="img/11.jpg"
@@ -179,7 +183,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img
               class="producto__imagen"
               src="img/12.jpg"
@@ -193,7 +197,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img
               class="producto__imagen"
               src="img/13.jpg"
@@ -207,7 +211,7 @@ include '../session.php'; // Iniciar la sesión
         </div>
 
         <div class="producto">
-          <a href="producto.html">
+          <a href="producto.php">
             <img
               class="producto__imagen"
               src="img/14.jpg"
@@ -225,8 +229,39 @@ include '../session.php'; // Iniciar la sesión
       <div class="grafico grafico--camisas"></div>
       <div class="grafico grafico--node"></div>
     </main>
+
+    <div id="carrito-lateral" class="carrito-lateral">
+    <div class="carrito-header">
+        <h2>Tu Carrito</h2>
+        <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
+    </div>
+    <div class="carrito-contenedor" id="carrito-contenido">
+        <?php
+        if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
+            foreach ($_SESSION['carrito'] as $producto) {
+                echo "<div class='producto-carrito'>";
+                echo "<p>Producto ID: " . htmlspecialchars($producto['producto_id']) . "</p>";
+                echo "<p>Cantidad: " . htmlspecialchars($producto['cantidad']) . "</p>";
+                echo "<p>Talla: " . htmlspecialchars($producto['talla']) . "</p>";
+                echo "<p>Género: " . htmlspecialchars($producto['genero']) . "</p>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>El carrito está vacío.</p>";
+        }
+        ?>
+    </div>
+    <div class="carrito-footer">
+        <button class="comprar-btn">Proceder al Pago</button>
+    </div>
+  </div>
+
+    <!-- Fondo oscurecido al abrir el carrito -->
+    <div id="overlay" class="overlay"></div>
+
     <!-- Modal de Iniciar Sesión -->
     <div id="modal-login" class="modal">
+      
       <div class="modal-content">
         <span class="close">&times;</span>
         <h2>Iniciar Sesión</h2>
@@ -288,4 +323,17 @@ include '../session.php'; // Iniciar la sesión
     </footer>
   </body>
   <script src="JS/script.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const contadorCarrito = document.getElementById("contador-carrito");
+
+        <?php if (isset($_SESSION['carrito'])): ?>
+            let totalProductos = 0;
+            <?php foreach ($_SESSION['carrito'] as $producto): ?>
+                totalProductos += <?php echo $producto['cantidad']; ?>;
+            <?php endforeach; ?>
+            contadorCarrito.textContent = totalProductos;
+        <?php endif; ?>
+    });
+</script>
 </html>
