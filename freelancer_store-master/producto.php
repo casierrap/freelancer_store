@@ -47,19 +47,22 @@ if (!$producto_id) {
     </nav>
 
     <!-- Contenido principal -->
+    <!-- Contenido principal -->
     <main class="contenedor">
         <h1><?php echo htmlspecialchars($producto_nombre); ?></h1>
 
         <div class="camisa">
-            <img class="camisa__imagen" src="img/<?php echo $producto_id; ?>.jpg" alt="Imagen de <?php echo htmlspecialchars($producto_nombre); ?>">
+            <img class="camisa__imagen" src="img/<?php echo htmlspecialchars($producto_id); ?>.jpg" alt="Imagen <?php echo htmlspecialchars($producto_nombre); ?>" />
 
             <div class="camisa__contenido">
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime odit odio laborum. Cum laborum cupiditate sint labore accusamus culpa. Ducimus, dolore magnam.</p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime odit odio laborum. Cum laborum cupiditate sint labore accusamus culpa.
+                </p>
 
                 <form action="../carrito.php" method="POST" class="formulario">
-                    <input type="hidden" name="producto_id" value="3"> <!-- Cambiar este valor por el ID real del producto -->
-                    <input type="hidden" name="producto_nombre" value="ReactJS"> <!-- Nombre del producto -->
-                    <input type="hidden" name="producto_precio" value="25000"> <!-- Precio del producto -->
+                    <input type="hidden" name="producto_id" value="<?php echo htmlspecialchars($producto_id); ?>">
+                    <input type="hidden" name="producto_nombre" value="<?php echo htmlspecialchars($producto_nombre); ?>">
+                    <input type="hidden" name="producto_precio" value="<?php echo htmlspecialchars($producto_precio); ?>">
 
                     <select name="talla" class="formulario__campo">
                         <option disabled selected>--Seleccionar Talla--</option>
@@ -86,25 +89,12 @@ if (!$producto_id) {
                         value="Agregar al Carrito"
                         name="agregar"
                     />
-                  </form>
-
+                </form>
             </div>
         </div>
     </main>
 
-    <div id="carrito-lateral" class="carrito-lateral">
-      <div class="carrito-header">
-        <h2>Tu Carrito</h2>
-        <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
-      </div>
-      <div class="carrito-contenedor" id="carrito-contenido">
-        <!--Aquí se llenará con los productos del carrito-->
-      </div>
-      <div class="carrito-footer">
-        <button class="comprar-btn">Proceder al Pago</button>
-      </div>
-    </div>
-
+    
 
     <!-- Fondo oscurecido al abrir el carrito -->
     <div id="overlay" class="overlay"></div>

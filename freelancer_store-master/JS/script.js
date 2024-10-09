@@ -100,24 +100,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Lógica para eliminar productos del carrito
   document.querySelectorAll(".eliminar-producto").forEach(function (eliminarBtn) {
-    eliminarBtn.addEventListener("click", function () {
-        const index = eliminarBtn.getAttribute("data-index");
+        eliminarBtn.addEventListener("click", function () {
+            const index = eliminarBtn.getAttribute("data-index");
 
-        // Crear un formulario para enviar la solicitud
-        const form = document.createElement("form");
-        form.method = "POST";
-        form.action = "eliminar_producto.php";
+            // Crear un formulario para enviar la solicitud
+            const form = document.createElement("form");
+            form.method = "POST";
+            form.action = "eliminar_producto.php";
 
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = "index";
-        input.value = index;
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "index";
+            input.value = index;
 
-        form.appendChild(input);
-        document.body.appendChild(form);
-        form.submit();
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+        });
     });
-});
+
+    //Logica para actualizar el total del carrito dinamicamente
+    function actualizarTotalCarrito() {
+        let total = 0;
+        document.querySelectorAll('.producto-carrito').forEach(function (producto) {
+            const cantidad = parseInt(producto.querySelector('.producto-carrito__cantidad').textContent.split(': ')[1]);
+            const precio = parseFloat(producto.querySelector('.producto-carrito__precio').textContent.split(': $')[1]);
+            total += cantidad * precio;
+        });
+        document.getElementById('total-compra').textContent = "Total de la compra: $" + total.toFixed(3);       
+    }
+
+    actualizarTotalCarrito();
+
+    //si eliminas un producto, el total tambien debe actualizarse
+
+    document.querySelectorAll('.eliminar-producto').forEach(function (eliminarBtn) {
+        eliminarBtn.addEventListener("click", function () {
+            setTimeout(actualizarTotalCarrito, 500); //Actualizar el total despues de eliminar
+        });
+
+    });
+
+
 
 
 });

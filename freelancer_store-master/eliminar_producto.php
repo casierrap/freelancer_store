@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['index'])) {
     }
 
     // Redirigir de vuelta a index.php
-    header("Location: freelancer_store-master/index.php");
+    header("Location: index.php");
     exit;
 } else {
     echo "Error al eliminar el producto del carrito.";

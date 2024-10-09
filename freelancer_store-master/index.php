@@ -231,44 +231,42 @@ include '../session.php'; // Iniciar la sesión
     </main>
 
     <div id="carrito-lateral" class="carrito-lateral">
-    <div class="carrito-header">
-        <h2>Tu Carrito</h2>
-        <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
-    </div>
-    <div class="carrito-contenedor" id="carrito-contenido">
-        <?php
-        if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
-            foreach ($_SESSION['carrito'] as $producto) {
-                echo "<div class='producto-carrito'>";
-                echo "<img class='producto-carrito__imagen' src='img/" . htmlspecialchars($producto['producto_id']) . ".jpg' alt='Imagen de " . htmlspecialchars($producto['producto_nombre']) . "'>";
-                echo "<p class='producto-carrito__nombre'>" . htmlspecialchars($producto['producto_nombre']) . "</p>";
-                echo "<p class='producto-carrito__precio'>Precio unitario: $" . htmlspecialchars(number_format($producto['producto_precio'])) . "</p>";
-                echo "<p class='producto-carrito__cantidad'>Cantidad: " . htmlspecialchars($producto['cantidad']) . "</p>";
-                echo "<p class='producto-carrito__total'>Total: $" . htmlspecialchars(number_format($producto['cantidad'] * $producto['producto_precio'])) . "</p>";
-                echo "<button class='eliminar-producto' data-index='" . $index . "'>Eliminar</button>";
-                echo "</div>";
-            }
-        } else {
-            echo "<p>El carrito está vacío.</p>";
-        }
-        ?>
-    </div>
-    <div class="carrito-footer">
-        <p id="total-compra"></p>
-        <button class="comprar-btn">Proceder al Pago</button>
-    </div>
-</div>
+      <div class="carrito-header">
+          <h2>Tu Carrito</h2>
+          <button id="cerrar-carrito" class="cerrar-carrito">&times;</button>
+      </div>
+      <div class="carrito-contenedor" id="carrito-contenido">
+          <?php
+          $total_carrito = 0; // Inicializar el total del carrito
 
-    <div class="carrito-footer">
-        <p id="total-compra"></p>
-        <button class="comprar-btn">Proceder al Pago</button>
-    </div>
-</div>
+          if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
+              foreach ($_SESSION['carrito'] as $index => $producto) {
+                  $total_producto = $producto['cantidad'] * $producto['producto_precio'];
+                  $total_carrito += $total_producto;
 
-    <div class="carrito-footer">
-        <button class="comprar-btn">Proceder al Pago</button>
+                  echo "<div class='producto-carrito'>";
+                  echo "<img class='producto-carrito__imagen' src='img/" . htmlspecialchars($producto['producto_id']) . ".jpg' alt='Imagen de " . htmlspecialchars($producto['producto_nombre']) . "'>";
+                  echo "<p class='producto-carrito__nombre'>" . htmlspecialchars($producto['producto_nombre']) . "</p>";
+                  echo "<p class='producto-carrito__precio'>Precio unitario: $" . htmlspecialchars(number_format($producto['producto_precio'], 2)) . "</p>";
+                  echo "<p class='producto-carrito__cantidad'>Cantidad: " . htmlspecialchars($producto['cantidad']) . "</p>";
+                  echo "<p class='producto-carrito__total'>Total: $" . htmlspecialchars(number_format($total_producto, 2)) . "</p>";
+                  echo "<button class='eliminar-producto' data-index='" . $index . "'>Eliminar</button>";
+                  echo "</div>";
+              }
+          } else {
+              echo "<p>El carrito está vacío.</p>";
+          }
+          ?>
+      </div>
+      <div class="carrito-footer">
+          <p id="total-compra">Total compra: $<?php echo number_format($total_carrito, 2); ?></p>
+          <button class="comprar-btn">Proceder al Pago</button>
+      </div>
     </div>
-  </div>
+
+    
+
+    
 
     <!-- Fondo oscurecido al abrir el carrito -->
     <div id="overlay" class="overlay"></div>

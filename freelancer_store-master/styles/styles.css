@@ -680,7 +680,7 @@ input:focus, button:focus {
     right: -100%; /*Inicialmente Oculto*/
     width: 300px;
     height: 100%;
-    background-color: red;
+    background-color: rgb(105, 100, 100);
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: right 0.3s ease;
@@ -710,12 +710,70 @@ input:focus, button:focus {
     right: 0;
 }
 
+.carrito-contenedor {
+    max-height: 60vh; /* Limitar la altura máxima del contenedor de productos */
+    overflow-y: auto; /* Habilitar scroll vertical */
+    margin-bottom: 20px;
+    padding-right: 10px; /* Añadir espacio para que el scroll no tape el contenido */
+}
+
+.producto-carrito {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ffffff44;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 .cerrar-carrito {
     background: none;
+    color: white;
     border: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
     position: absolute;
     top: 10px;
     right: 10px;
+}
+
+.carrito-footer {
+    position: sticky;
+    bottom: 0;   
+    padding: 10px 0;
+    text-align: center;
+}
+
+.comprar-btn {
+    background-color: #28a745; /* Color verde */;
+    color: white;
+    padding: 15px 20px; /* Padding para hacerlo más grande */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease-in-out; /* Transición para efecto al pasar el ratón */
+
+}
+
+.comprar-btn:hover {
+    background-color:  #218838; /* Un verde un poco más oscuro al pasar el ratón */
+}
+
+.eliminar-producto {
+    background-color: #dc3545; /*Color rojo estilo danger*/
+    color: white;
+    padding: 10px 15px; /*padding ajustado*/
+    border: none;
+    border-radius: 5px; /*Border redondeados*/
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease-in-out; /* Transición para el hover */
+    margin-top: 10px; /* Espacio superior para separarse de los demas elementos */
+}
+
+.eliminar-producto:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
 }
