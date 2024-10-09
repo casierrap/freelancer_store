@@ -97,4 +97,27 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
       console.warn("No se encontraron todos los elementos críticos para el carrito lateral.");
   }
+
+  // Lógica para eliminar productos del carrito
+  document.querySelectorAll(".eliminar-producto").forEach(function (eliminarBtn) {
+    eliminarBtn.addEventListener("click", function () {
+        const index = eliminarBtn.getAttribute("data-index");
+
+        // Crear un formulario para enviar la solicitud
+        const form = document.createElement("form");
+        form.method = "POST";
+        form.action = "eliminar_producto.php";
+
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = "index";
+        input.value = index;
+
+        form.appendChild(input);
+        document.body.appendChild(form);
+        form.submit();
+    });
+});
+
+
 });

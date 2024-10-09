@@ -1,5 +1,18 @@
 <?php
 include '../session.php'; // Iniciar la sesión
+
+// Obtener los parámetros del producto
+$producto_id = isset($_GET['id']) ? $_GET['id'] : null;
+$producto_nombre = isset($_GET['nombre']) ? $_GET['nombre'] : 'Producto Desconocido';
+$producto_precio = isset($_GET['precio']) ? $_GET['precio'] : '0';
+
+// Verificar si se proporcionaron todos los parámetros necesarios
+if (!$producto_id) {
+    echo "Producto no encontrado.";
+    exit;
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +29,7 @@ include '../session.php'; // Iniciar la sesión
     />
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="JS/script.js"></script>
-    <title>Tienda Front End</title>
+    <title>Tienda Front End - <?php echo htmlspecialchars($producto_nombre); ?></title>
   </head>
   <body>
     <!-- Header -->
@@ -35,49 +48,48 @@ include '../session.php'; // Iniciar la sesión
 
     <!-- Contenido principal -->
     <main class="contenedor">
-      <h1>React JS</h1>
+        <h1><?php echo htmlspecialchars($producto_nombre); ?></h1>
 
-      <div class="camisa">
-        <img class="camisa__imagen" src="img/3.jpg" alt="Imagen Producto" />
+        <div class="camisa">
+            <img class="camisa__imagen" src="img/<?php echo $producto_id; ?>.jpg" alt="Imagen de <?php echo htmlspecialchars($producto_nombre); ?>">
 
-        <div class="camisa__contenido">
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime
-            odit odio laborum. Cum laborum cupiditate sint labore accusamus
-            culpa. Ducimus, dolore magnam.
-          </p>
+            <div class="camisa__contenido">
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime odit odio laborum. Cum laborum cupiditate sint labore accusamus culpa. Ducimus, dolore magnam.</p>
 
-          <form action="../carrito.php" method="POST" class="formulario">
-            <input type="hidden" name="producto_id" value="3"> <!-- Cambiar este valor por el ID real del producto -->
+                <form action="../carrito.php" method="POST" class="formulario">
+                    <input type="hidden" name="producto_id" value="3"> <!-- Cambiar este valor por el ID real del producto -->
+                    <input type="hidden" name="producto_nombre" value="ReactJS"> <!-- Nombre del producto -->
+                    <input type="hidden" name="producto_precio" value="25000"> <!-- Precio del producto -->
 
-            <select name="talla" class="formulario__campo">
-              <option disabled selected>--Seleccionar Talla--</option>
-              <option value="Pequeña">Pequeña</option>
-              <option value="Mediana">Mediana</option>
-              <option value="Grande">Grande</option>
-            </select>
-            <select name="genero" class="formulario__campo">
-              <option disabled selected>--Seleccionar Género--</option>
-              <option value="hombre">Hombre</option>
-              <option value="mujer">Mujer</option>
-            </select>
-            <input
-              class="formulario__campo"
-              type="number"
-              name="cantidad"
-              placeholder="Cantidad"
-              min="1"
-              value="1"
-            />
-            <input
-              class="formulario__submit"
-              type="submit"
-              value="Agregar al Carrito"
-              name="agregar"
-            />
-          </form>
+                    <select name="talla" class="formulario__campo">
+                        <option disabled selected>--Seleccionar Talla--</option>
+                        <option value="Pequeña">Pequeña</option>
+                        <option value="Mediana">Mediana</option>
+                        <option value="Grande">Grande</option>
+                    </select>
+                    <select name="genero" class="formulario__campo">
+                        <option disabled selected>--Seleccionar Género--</option>
+                        <option value="hombre">Hombre</option>
+                        <option value="mujer">Mujer</option>
+                    </select>
+                    <input
+                        class="formulario__campo"
+                        type="number"
+                        name="cantidad"
+                        placeholder="Cantidad"
+                        min="1"
+                        value="1"
+                    />
+                    <input
+                        class="formulario__submit"
+                        type="submit"
+                        value="Agregar al Carrito"
+                        name="agregar"
+                    />
+                  </form>
+
+            </div>
         </div>
-      </div>
     </main>
 
     <div id="carrito-lateral" class="carrito-lateral">

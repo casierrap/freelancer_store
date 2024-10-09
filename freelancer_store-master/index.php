@@ -64,9 +64,9 @@ include '../session.php'; // Iniciar la sesión
     <main class="contenedor">
       <h1>Nuestros Productos</h1>
       <div class="grid">
-        <div class="producto">
-          <a href="producto.php">
-            <img class="producto__imagen" src="img/1.jpg" alt="imagen camisa" />
+        <div class="producto" data-id="1" data-nombre="VueJS" data-precio="25000">
+          <a href="producto.php?id=1&nombre=VueJS&precio=25000">
+            <img class="producto__imagen" src="img/1.jpg" alt="imagen camisa VueJS" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">VueJS</p>
@@ -74,88 +74,88 @@ include '../session.php'; // Iniciar la sesión
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="2" data-nombre="AngularJS" data-precio="45000">
+          <a href="producto.php?id=2&nombre=AngularJS&precio=45000">
             <img class="producto__imagen" src="img/2.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">AngularJS</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$45.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="3" data-nombre="ReactJS" data-precio="75000">
+          <a href="producto.php?id=3&nombre=ReactJS&precio=75000">
             <img class="producto__imagen" src="img/3.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">ReactJS</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$75.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="4" data-nombre="Redux" data-precio="40000">
+          <a href="producto.php?id=4&nombre=Redux&precio=40000">
             <img class="producto__imagen" src="img/4.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">Redux</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$40.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="5" data-nombre="NodeJS" data-precio="140000">
+          <a href="producto.php?id=5&nombre=NodeJS&precio=140000">
             <img class="producto__imagen" src="img/5.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">NodeJS</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$140.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="6" data-nombre="SASS" data-precio="80000">
+          <a href="producto.php?id=6&nombre=SASS&precio=80000">
             <img class="producto__imagen" src="img/6.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">SASS</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$80.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="7" data-nombre="HTML5" data-precio="30000">
+          <a href="producto.php?id=7&nombre=HTML5&precio=30000">
             <img class="producto__imagen" src="img/7.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">HTML5</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$30.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="8" data-nombre="Github" data-precio="90000">
+          <a href="producto.php?id=8&nombre=Github&precio=90000">
             <img class="producto__imagen" src="img/8.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">Github</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$90.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="9" data-nombre="BulmaCSS" data-precio="300000">
+          <a href="producto.php?id=9&nombre=BulmaCSS&precio=300000">
             <img class="producto__imagen" src="img/9.jpg" alt="imagen camisa" />
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">BulmaCSS</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$300.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="10" data-nombre="Typescript" data-precio="50000">
+          <a href="producto.php?id=10&nombre=Typescript&precio=50000">
             <img
               class="producto__imagen"
               src="img/10.jpg"
@@ -164,12 +164,12 @@ include '../session.php'; // Iniciar la sesión
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">Typescript</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$50.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="11" data-nombre="Drupal" data-precio="25000">
+          <a href="producto.php?id=11&nombre=Drupal&precio=25000">
             <img
               class="producto__imagen"
               src="img/11.jpg"
@@ -182,8 +182,8 @@ include '../session.php'; // Iniciar la sesión
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="12" data-nombre="Javascript" data-precio="15000">
+          <a href="producto.php?id=12&nombre=Javascript&precio=15000">
             <img
               class="producto__imagen"
               src="img/12.jpg"
@@ -192,12 +192,12 @@ include '../session.php'; // Iniciar la sesión
           </a>
           <div class="producto__informacion">
             <p class="producto__nombre">Javascript</p>
-            <p class="producto__precio">$25.000</p>
+            <p class="producto__precio">$15.000</p>
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="13" data-nombre="GraphQL" data-precio="17000">
+          <a href="producto.php?id=13&nombre=GraphQL&precio=17000">
             <img
               class="producto__imagen"
               src="img/13.jpg"
@@ -210,8 +210,8 @@ include '../session.php'; // Iniciar la sesión
           </div>
         </div>
 
-        <div class="producto">
-          <a href="producto.php">
+        <div class="producto" data-id="14" data-nombre="Wordpress" data-precio="25000">
+          <a href="producto.php?id=14&nombre=Wordpress&precio=25000">
             <img
               class="producto__imagen"
               src="img/14.jpg"
@@ -240,10 +240,12 @@ include '../session.php'; // Iniciar la sesión
         if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
             foreach ($_SESSION['carrito'] as $producto) {
                 echo "<div class='producto-carrito'>";
-                echo "<p>Producto ID: " . htmlspecialchars($producto['producto_id']) . "</p>";
-                echo "<p>Cantidad: " . htmlspecialchars($producto['cantidad']) . "</p>";
-                echo "<p>Talla: " . htmlspecialchars($producto['talla']) . "</p>";
-                echo "<p>Género: " . htmlspecialchars($producto['genero']) . "</p>";
+                echo "<img class='producto-carrito__imagen' src='img/" . htmlspecialchars($producto['producto_id']) . ".jpg' alt='Imagen de " . htmlspecialchars($producto['producto_nombre']) . "'>";
+                echo "<p class='producto-carrito__nombre'>" . htmlspecialchars($producto['producto_nombre']) . "</p>";
+                echo "<p class='producto-carrito__precio'>Precio unitario: $" . htmlspecialchars(number_format($producto['producto_precio'])) . "</p>";
+                echo "<p class='producto-carrito__cantidad'>Cantidad: " . htmlspecialchars($producto['cantidad']) . "</p>";
+                echo "<p class='producto-carrito__total'>Total: $" . htmlspecialchars(number_format($producto['cantidad'] * $producto['producto_precio'])) . "</p>";
+                echo "<button class='eliminar-producto' data-index='" . $index . "'>Eliminar</button>";
                 echo "</div>";
             }
         } else {
@@ -251,6 +253,18 @@ include '../session.php'; // Iniciar la sesión
         }
         ?>
     </div>
+    <div class="carrito-footer">
+        <p id="total-compra"></p>
+        <button class="comprar-btn">Proceder al Pago</button>
+    </div>
+</div>
+
+    <div class="carrito-footer">
+        <p id="total-compra"></p>
+        <button class="comprar-btn">Proceder al Pago</button>
+    </div>
+</div>
+
     <div class="carrito-footer">
         <button class="comprar-btn">Proceder al Pago</button>
     </div>
