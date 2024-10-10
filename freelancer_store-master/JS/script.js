@@ -141,7 +141,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-
+    document.getElementById('register-form').addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+    
+        const formData = new FormData(this);
+        const xhr = new XMLHttpRequest();
+    
+        xhr.open('POST', 'register.php', true);
+        xhr.onload = function () {
+            try {
+                if (this.status === 200) {
+                    const response = JSON.parse(this.responseText);
+                    alert(response.message);
+                    if (response.success) {
+                        document.getElementById('modal-register').style.display = 'none';
+                        window.location.href = 'index.php'; // Redirigir si es exitoso
+                    }
+                }
+            } catch (error) {
+                console.error('Error procesando la respuesta del servidor: ', error);
+                alert('Hubo un error procesando la respuesta del servidor. Por favor intenta de nuevo.');
+            }
+        };
+        xhr.send(formData);
+    });
+    
 
 
 });

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             if ($user) {
                 // Verificar la contraseña
                 // Asumiendo que las contraseñas están hasheadas usando password_hash()
-                if ($password === $user['password']) {
+                if (password_verify($password, $user['password'])) {
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['email'] = $user['email'];
                     $_SESSION['username'] = $user['username']; // Asegúrate de tener un campo 'username' en tu tabla 'users'

@@ -302,33 +302,80 @@ include '../session.php'; // Iniciar la sesión
       </div>
     </div>
 
-    <!-- Modal de Registro -->
-    <div id="modal-register" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Registro</h2>
-        <form id="register-form">
-          <input
-            type="email"
-            placeholder="Correo electrónico"
-            id="register-email"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Contraseña"
-            id="register-password"
-            required
-          />
-          <button type="submit" id="btn-register">Registrarse</button>
-          <button type="button" id="btn-cancelar-register" class="btn-cancelar">
-            Salir
-          </button>
-
-          <!-- Botón de salir -->
-        </form>
-      </div>
+      <!-- Modal de Registro -->
+  <div id="modal-register" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Registro</h2>
+      <form id="register-form">
+        <input
+          type="text"
+          placeholder="Nombre Completo"
+          id="register-nombre"
+          name="nombre"
+          required
+          style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"
+        />
+        
+        <input
+          type="email"
+          placeholder="Correo electrónico"
+          id="register-email"
+          name="email"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Nombre de usuario"
+          id="register-username"
+          name="username"
+          required
+        />
+        <input
+          type="number"
+          placeholder="Teléfono"
+          id="register-phone"
+          name="telefono"
+          required
+          style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"
+        />
+        <input
+          type="text"
+          placeholder="Dirección"
+          id="register-address"
+          name="direccion"
+          required
+        />
+        <select id="register-city" name="ciudad" required>
+          <option value="" disabled selected>--Seleccionar Ciudad--</option>
+          <option value="Bogota">Bogotá</option>
+          <option value="Cali">Cali</option>
+          <option value="Medellin">Medellín</option>
+        </select>
+        <input
+          type="password"
+          placeholder="Contraseña"
+          id="register-password"
+          name="password"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Confirmar Contraseña"
+          id="register-confirm-password"
+          name="confirm_password"
+          required
+          style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"
+        />
+        
+        <button type="submit" id="btn-register">Registrarse</button>
+        <button type="button" id="btn-cancelar-register" class="btn-cancelar">
+          Salir
+        </button>
+      </form>
     </div>
+  </div>
+
 
     <footer class="footer">
       <p class="footer__texto">Front End Store © Todos los derechos 2024</p>

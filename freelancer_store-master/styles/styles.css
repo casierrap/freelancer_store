@@ -284,7 +284,7 @@ h3 {
 
     display: flex;
     flex-direction: column;
-    align-items: center;
+    gap: 15px
 }
 
 #login-email, #login-password {
@@ -300,19 +300,22 @@ h3 {
 
 
 .modal {
-    display: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
 }
 
 .modal-content {
     background-color: white;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
     padding: 20px;
     border-radius: 10px;
     width: 400px;
@@ -322,6 +325,7 @@ h3 {
     box-shadow: none;
     border: none;
 }
+
 
 #btn-login, #btn-cancelar-login {
 
@@ -433,6 +437,26 @@ h3 {
 #register-fullname, #register-username, #register-phone, 
 #register-email, #register-password, #confirm-password, 
 #register-address, #register-city, #register-department {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#register-confirm-password {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#register-nombre {
     width: 100%;
     max-width: 300px;
     padding: 10px;
@@ -680,7 +704,7 @@ input:focus, button:focus {
     right: -100%; /*Inicialmente Oculto*/
     width: 300px;
     height: 100%;
-    background-color: rgb(105, 100, 100);
+    background-color: #8f0aa7e1;
     box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     transition: right 0.3s ease;
@@ -747,7 +771,7 @@ input:focus, button:focus {
 }
 
 .comprar-btn {
-    background-color: #28a745; /* Color verde */;
+    background-color: #ffcc00c2; /* Color verde */;
     color: white;
     padding: 15px 20px; /* Padding para hacerlo más grande */
     border: none;
