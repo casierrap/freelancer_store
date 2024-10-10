@@ -41,15 +41,15 @@ include '../session.php'; // Iniciar la sesión
     <a href="logout.php" class="header__link" id="btn-logout-icon">
         <i class="fa fa-sign-out-alt"></i> Cerrar Sesión
     </a>
-<?php else: ?>
-    <a href="#" class="header__link" id="btn-login1">Mi cuenta</a>
-    <a href="#" class="header__link" id="btn-login-icon">
-        <i class="fa fa-user"></i>
+    <?php else: ?>
+        <a href="#" class="header__link" id="btn-login1">Mi cuenta</a>
+        <a href="#" class="header__link" id="btn-login-icon">
+            <i class="fa fa-user"></i>
+        </a>
+    <?php endif; ?>
+    <a href="#" class="carrito-icono"><i class="fa fa-shopping-cart"></i>
+        <span id="contador-carrito" class="contador-carrito">0</span>
     </a>
-<?php endif; ?>
-<a href="#" class="carrito-icono"><i class="fa fa-shopping-cart"></i>
-    <span id="contador-carrito" class="contador-carrito">0</span>
-</a>
 
       </nav>
     </header>
